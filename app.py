@@ -22,7 +22,7 @@ if st.button("Run Strategy"):
 
             # Handle MultiIndex Columns
             if isinstance(data.columns, pd.MultiIndex):
-                data.columns = data.columns.get_level_values(1)
+                data.columns = data.columns.get_level_values(0)
 
             # Rename Close to Price for consistency
             data = data.rename(columns={"Close": "Price"})
